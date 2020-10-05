@@ -24,7 +24,9 @@ jobs:
         uses: actions/setup-node@v2.1.2
 
       - name: Setup dependencies
-        run: npm install
+        run: |
+          cd api
+          npm install
 
-      - name: Run a multi-line script
+      - name: Run Test
         run: npm run test
