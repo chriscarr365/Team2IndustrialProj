@@ -19,13 +19,17 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Checkout repository
+    - name: Checkout Repository
       uses: actions/checkout@v2
           
-    - name: Setup dependencies
+    - name: Setup Dependencies
       working-directory: ./api
       run: npm install
 
     - name: Run Test
       working-directory: ./api
       run: npm run test
+    
+    - name: Build Docker Image
+      working-directory: ./api
+      run: docker build -t team2ip .
