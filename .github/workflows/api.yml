@@ -21,15 +21,11 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      with:
-        path: ./api
           
     - name: Setup dependencies
-      run: |
-        cd api
-        npm install
+      working-directory: ./api
+      run: npm install
 
     - name: Run Test
-      run: | 
-        cd ./api
-        npm run test
+      working-directory: ./api
+      run: npm run test
