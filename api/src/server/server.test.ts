@@ -16,10 +16,6 @@ describe('Server Test', () => {
         });
     });
 
-    it('should always pass', () => {
-        expect(true).to.equal(true);
-    });
-
     it('should GET /', async () => {
         const res = await request(server.app)
             .get('/');
@@ -27,8 +23,5 @@ describe('Server Test', () => {
         expect(res.status).to.equal(200);
         expect(res.text).not.to.be.empty;
         expect(res.text).to.be.equal('Hello World');
-
     });
-
-
 });
