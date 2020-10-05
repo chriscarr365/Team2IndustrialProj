@@ -31,5 +31,5 @@ jobs:
 
     - name: Run Test
       run: | 
-        cd ./api |
+        cd ./api
         npm run test
