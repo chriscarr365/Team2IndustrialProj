@@ -10,7 +10,7 @@
     "start": "node .",
     "watch": "nodemon src/main.ts",
     "test-dev" : "nodemon --watch . --ext ts --exec \"mocha -r ts-node/register src/**/*.test.ts\"",
-    "test" : "mocha -r ts-node/register src/**/*.test.ts"
+    "test" : "mocha --exit -r ts-node/register src/**/*.test.ts"
   },
   "author": "",
   "license": "ISC",
