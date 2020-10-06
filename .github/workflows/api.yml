@@ -30,16 +30,6 @@ jobs:
       working-directory: ./api
       run: npm run test
     
-    - name: AWS ECR Login
-      uses: kciter/aws-ecr-action@v1
-      with:
-        access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        secret_access_key: ${{ secrets.AWS_ACCESS_KEY }}
-        account_id: ${{ secrets.AWS_ACCOUNT_ID }}
-        repo: ${{ secrets.AWS_ECR }}
-        region: us-east-1
-        path: ./api
-    
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
