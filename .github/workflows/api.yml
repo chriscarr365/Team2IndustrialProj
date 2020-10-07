@@ -19,7 +19,15 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
-          
+
+#     - name: Setup Test MySQL Db
+#       uses: mirromutth/mysql-action@v1.1
+#       with:
+#         mysql root password: ${{ secrets.MYSQL_TEST_PASS }}
+#         mysql database: ${{ secrets.MYSQL_TEST_DB }}
+#         mysql user: ${{ secrets.MYSQL_TEST_USER }}
+#         mysql password: ${{ secrets.MYSQL_TEST_USER_PASS }} 
+    
     - name: Setup Dependencies
       working-directory: ./api
       run: npm install
