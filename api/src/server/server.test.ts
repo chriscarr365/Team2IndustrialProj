@@ -1,17 +1,14 @@
 import { expect } from 'chai';
-import { Db } from '../db/db';
 import { agent as request } from 'supertest';
-import * as sinon from 'sinon';
 import dotenv from 'dotenv';
 
-import { Server } from './server';
 
 /*tslint:disable: no-unused-expression */
 
 xdescribe('Server Test', () => {
 
-    let server: Server;
-    let db;
+    // let server: Server;
+    // let db;
 
     before((done) => {
 
@@ -33,11 +30,11 @@ xdescribe('Server Test', () => {
     });
 
     it('should GET /', async () => {
-        const res = await request(server.app)
-            .get('/');
+        // const res = await request(server.app)
+        //     .get('/');
 
-        expect(res.status).to.equal(200);
-        expect(res.text).not.to.be.empty;
-        expect(res.text).to.be.equal('Hello World');
+        // expect(res.status).to.equal(200);
+        // expect(res.text).not.to.be.empty;
+        // expect(res.text).to.be.equal('Hello World');
     });
 });
