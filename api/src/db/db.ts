@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import { createConnection, Connection, ConnectionOptions } from 'mysql';
 
 export class Db {
@@ -25,4 +26,7 @@ export class Db {
         });
 
     }
+=======
+module.exports = class Db {
+>>>>>>> Stashed changes
 }

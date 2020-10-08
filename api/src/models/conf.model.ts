@@ -1,5 +1,6 @@
 export interface ServConf {
     port: string;
+<<<<<<< Updated upstream
 }
 
 export interface DbConf {
@@ -7,4 +8,6 @@ export interface DbConf {
     dbName: string;
     dbUser: string;
     dbPassword: string;
+=======
+>>>>>>> Stashed changes
 }
