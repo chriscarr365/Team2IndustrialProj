@@ -1,8 +1,9 @@
-import express, { Response, Request } from 'express';
+import express, { Response, Request, NextFunction } from 'express';
 import morgan from 'morgan';
 import * as bodyParser from 'body-parser';
 
 import { ServConf } from '../models/conf.model';
+import { Db } from '../db/db';
 
 export class Server {
 
@@ -12,14 +13,17 @@ export class Server {
     /* The Express app. */
     app;
 
+    /* The db client */
+    db: Db;
+
     /**
      * Constructor.
      * @param conf Server config
      */
-    constructor(conf: ServConf) {
+    constructor(conf: ServConf, db: Db) {
         this.conf = conf;
         this.app = express();
-
+        this.db = db;
         this.initMiddleware();
         this.initRoutes();
     }
@@ -53,6 +57,11 @@ export class Server {
         this.app.use(morgan('tiny'));
         this.app.use(bodyParser.json());
 
+        // Injecting the database into each request
+        this.app.use((req: Request, res: Response, next: NextFunction) => {
+            res.locals.db = this.db;
+            next();
+        })
     }
 }
 
